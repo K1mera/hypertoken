@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .filterButton {
-    @apply flex gap-2 py-1 px-4 border border-light rounded-lg;
+    @apply flex gap-2 py-1 px-4 border border-light rounded-lg items-center;
 }

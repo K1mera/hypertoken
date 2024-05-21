@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import { InfoIcon, CategoryIcon, LockIcon } from "../svg";
 
 export const MarketCard = () => {
@@ -20,14 +21,14 @@ export const MarketCard = () => {
         </p>
       </section>
       <footer className="flex gap-2">
-        <button className="font-robotoMono rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
+        <Link to={`/${'id'}`} className="font-robotoMono rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
         <InfoIcon className={'w-5'} />
           View Listing
-        </button>
-        <button className="font-robotoMono bg-primary rounded-lg px-5 py-3 flex justify-center items-center gap-2 truncate">
+        </Link>
+        <Link className="font-robotoMono bg-primary rounded-lg px-5 py-3 flex justify-center items-center gap-2 truncate">
             <LockIcon className={'w-5'} />
           Unlock List
-        </button>
+        </Link>
       </footer>
     </main>
   );
