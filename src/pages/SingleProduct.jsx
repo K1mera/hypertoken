@@ -1,5 +1,5 @@
 
-import { ChartComponent, CompanyOverview, Opening, OptionsBar, Social } from "../components";
+import { ChartComponent, CompanyOverview, Opening, OptionsBar, Social, Summary } from "../components";
 
 
 
@@ -15,7 +15,7 @@ export const SingleProduct = () => {
 
       
       <ChartComponent />
-      <footer></footer>
+      <Summary />
     </main>
   );
 };

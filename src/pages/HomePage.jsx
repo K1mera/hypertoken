@@ -24,7 +24,7 @@ export const HomePage = () => {
   return (
     <main className="w-full h-[calc(100vh-64px)] flex flex-col  pt-20 gap-20 scroll-p-0 scroll-m-0">
       <section className="flex w-full">
-        <section className="flex flex-col items-start gap-3 w-[45%]">
+        <section className="flex flex-col items-start gap-3 w-[47%]">
           <h3 className="font-rubik font-bold text-xl text-secondary">
             PRE-LAUNCH SALE ON NOW
           </h3>
@@ -36,7 +36,7 @@ export const HomePage = () => {
               $SAAS TOKEN
             </h1>
           </div>
-          <button className="border border-secondary rounded-lg px-10 font-rubik font-bold text-lg w-full">
+          <button className="border border-secondary rounded-lg px-10 font-rubik font-bold text-lg w-[98%]">
             1 SOL: 1,000,000 SAAS TOKENS
           </button>
         </section>
