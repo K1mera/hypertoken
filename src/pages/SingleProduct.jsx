@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 export const SingleProduct = () => {
   return (
     <main className="h-full w-full flex flex-col ">
-      <OptionsBar />
+      {/* <OptionsBar /> */}
       <Opening />
       <Social />
       <CompanyOverview />

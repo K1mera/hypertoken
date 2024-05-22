@@ -22,35 +22,35 @@ export const HomePage = () => {
   };
 
   return (
-    <main className="w-full h-[calc(100vh-64px)] flex flex-col  pt-20 gap-20 scroll-p-0 scroll-m-0">
-      <section className="flex w-full">
-        <section className="flex flex-col items-start gap-3 w-[47%]">
-          <h3 className="font-rubik font-bold text-xl text-secondary">
+    <main className="w-full  h-full pb-10 md:h-[calc(100vh-64px)] flex flex-col  pt-20 gap-20 scroll-p-0 scroll-m-0">
+      <section className="flex w-full md:flex-row flex-col">
+        <section className="flex flex-col items-center gap-3 lg:gap-0 w-full md:w-[47%]">
+          <h3 className="font-rubik font-bold text-md md:text-xl lg:text-2xl text-secondary">
             PRE-LAUNCH SALE ON NOW
           </h3>
           <div className="flex flex-col gap-0 ">
-            <h2 className="font-rubik font-bold text-[2.2rem] -mb-7">
+            <h2 className="font-rubik font-bold text-[1.1rem] md:text-[2.2rem] lg:text-[2.95rem] lg:-mb-11 md:-mb-7 -mb-4">
               BUY AND SELL STARTUPS WITH
             </h2>
-            <h1 className="font-rubik font-bold text-[4.884rem] text-primary">
+            <h1 className="font-rubik font-bold text-[2.46rem] md:text-[4.884rem] lg:text-[6.57rem] text-primary">
               $SAAS TOKEN
             </h1>
           </div>
-          <button className="border border-secondary rounded-lg px-10 font-rubik font-bold text-lg w-[98%]">
+          <button className="border border-secondary rounded-lg px-10 font-rubik font-bold text-md md:text-lg w-[98%]">
             1 SOL: 1,000,000 SAAS TOKENS
           </button>
         </section>
-        <section className="w-[55%] flex justify-center items-center">
+        <section className="w-full md:w-[55%] flex justify-center items-center">
           <img src={hypertoken} className="w-64" alt="" />
           {/* social */}
         </section>
       </section>
       <section className="justify-center items-center w-full">
-        <div className="flex ">
+        <div className="flex flex-col md:flex-row ">
           <form
             action=""
             onSubmit={onSubmit}
-            className="flex items-center mb-2 w-1/2 pr-20 "
+            className="flex items-center mb-2 md:w-1/2 md:pr-20 w-full "
           >
             <input
               type="text"
@@ -60,14 +60,11 @@ export const HomePage = () => {
               name="value"
               className="bg-white/10 w-full h-10 rounded-l-lg font-robotoMono font-medium pl-5"
             />
-            <button
-              type="submit"
-              className="bg-primary w-16 h-10 rounded-r-lg font-rubik font-bold"
-            >
+            <button className="bg-primary w-16 h-10 rounded-r-lg font-rubik font-bold">
               buy
             </button>
           </form>
-          <div className="w-1/2 border-l-2 border-thertiary pl-5">
+          <div className="w-1/2 border-l-2 border-thertiary pl-5 md:flex hidden">
             <p>
               Hypergrow is a cutting-edge decentralized platform revolutionizing
               early-stage startup investing through blockchain technology. Join
@@ -79,9 +76,18 @@ export const HomePage = () => {
         </div>
 
         <div>
-          <h2 className="font-rubik font-bold text-primary">
-            $SAAS: <span className="font-robotoMono text-light">{ calcSol(value) }</span>
+          <h2 className="font-rubik font-bold text-primary pb-5">
+            $SAAS:{" "}
+            <span className="font-robotoMono text-light">{calcSol(value)}</span>
           </h2>
+        </div>
+        <div className="w-full border-t-2 pt-5 mt-5 border-thertiary md:hidden">
+          <p>
+            Hypergrow is a cutting-edge decentralized platform revolutionizing
+            early-stage startup investing through blockchain technology. Join us
+            in our mission to democratize access to investment opportunities
+            while securing your spot in our token presale for exclusive benefits
+          </p>
         </div>
       </section>
     </main>

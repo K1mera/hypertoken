@@ -4,8 +4,8 @@ import {Calendar, CashIcon, CategoryIcon, HandCash} from '../../svg';
 
 export const Opening = () => {
   return (
-    <section className="flex w-full gap-10 py-10 border-b-2 border-dashed">
-      <div className="w-[68%] flex flex-col gap-5">
+    <section className="flex md:flex-row flex-col w-full gap-10 py-10 border-b-2 border-dashed">
+      <div className="md:w-[68%]  flex flex-col gap-5">
         <header className="font-semibold flex gap-2">
           {" "}
           <CategoryIcon className={"w-5 "} /> Category
@@ -19,14 +19,14 @@ export const Opening = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <section className="flex gap-5">
+        <section className="flex justify-start gap-5">
           <div className="flex flex-col">
             <span className="font-robotoMono text-light text-sm">
               Asking price
             </span>
             <h2 className="font-rubik font-bold text-thertiary">$125k</h2>
           </div>
-          <div>
+          <div className='flex flex-col'>
             <span className="font-robotoMono text-light text-sm">
               Multiples
             </span>
@@ -35,8 +35,8 @@ export const Opening = () => {
             </h2>
           </div>
         </section>
-        <footer className="flex w-full justify-between">
-          <div className="flex flex-col border-r border-dashed pr-10">
+        <footer className="flex md:flex-row flex-wrap w-full justify-between">
+          <div className="flex flex-col border-r border-dashed pr-10 p-1 md:w-auto w-1/2 my-1 h-16 justify-center md:justify-start ">
             <span className="font-robotoMono text-light text-sm">
               TTM REVENUE
             </span>
@@ -45,7 +45,7 @@ export const Opening = () => {
               <CashIcon className={"w-5"} /> $25k
             </h2>
           </div>
-          <div className="flex flex-col border-r border-dashed pr-10">
+          <div className="flex flex-col md:border-r border-dashed pr-10 md:w-auto w-1/2 p-1 my-1 h-16 justify-center md:justify-start pl-5">
             <span className="font-robotoMono text-light text-sm">
               TTM PROFIT
             </span>
@@ -54,7 +54,7 @@ export const Opening = () => {
               <HandCash className={"w-5"} /> $25k
             </h2>
           </div>
-          <div className="flex flex-col border-r border-dashed pr-10">
+          <div className="flex flex-col border-r border-dashed pr-10 md:w-auto w-1/2 p-1 my-1 h-16 justify-center md:justify-start">
             <span className="font-robotoMono text-light text-sm">
               LAST MONTHS REVENUE
             </span>
@@ -62,7 +62,7 @@ export const Opening = () => {
               <Calendar className={"w-5"} /> $25k
             </h2>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col md:w-auto w-1/2 p-1 my-1 h-16 justify-center md:justify-start">
             <span className="font-robotoMono text-light text-sm">
               LAST MONTHS PROFIT
             </span>

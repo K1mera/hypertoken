@@ -3,15 +3,15 @@ import { InfoIcon, CategoryIcon, LockIcon } from "../svg";
 
 export const MarketCard = () => {
   return (
-    <main className="w-[31%] h-[ px] rounded-xl border border-primary flex flex-col p-5 shadow-card gap-5">
+    <main className="md:w-[31%] w-full  h-[ px] rounded-xl border border-primary flex flex-col p-5 shadow-card gap-5">
       <header className="font-semibold flex gap-2">
         {" "}
         <CategoryIcon className={"w-5 "} /> Category
       </header>
       <ul className="font-rubik font-bold flex gap-2 text-lg">
-        <li className="text-thertiary">BTC 6.61</li>
+        {/* <li className="text-thertiary">BTC 6.61</li> */}
         <li className="text-thertiary">SOL 2,729.97</li>
-        <li className="text-thertiary">USD 401,429</li>
+        <li className="text-thertiary">SAAS 401,429</li>
       </ul>
       <section className="h-full flex flex-col gap-2 w-full">
         <h3 className="font-robotoMono font-regular text-lg">Monthly Multiple <span className='font-rubik font-bold'>30X</span></h3>

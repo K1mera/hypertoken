@@ -9,7 +9,6 @@ export default {
         thertiary: "#C68F01",
         dark: "#040009",
         light: "#FEFCFF",
-        
       },
       backgroundColor: {
         primary: "#8E37DB",
@@ -17,11 +16,10 @@ export default {
         thertiary: "#C68F01",
         dark: "#040009",
         light: "#FEFCFF",
-        
       },
       fontFamily: {
         rubik: '"Rubik", sans-serif',
-        robotoMono: '"Roboto Mono", monospace',
+        robotoMono: '"Poppins", sans-serif',
       },
       boxShadow: {
         card: "8px 12px 0px 0px #BF76FF",
