@@ -1,9 +1,9 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { InfoIcon, CategoryIcon, LockIcon } from "../svg";
 
 export const MarketCard = () => {
   return (
-    <main className="w-[400px] h-[400px] rounded-xl border border-primary flex flex-col p-5 shadow-card gap-5">
+    <main className="w-[31%] h-[ px] rounded-xl border border-primary flex flex-col p-5 shadow-card gap-5">
       <header className="font-semibold flex gap-2">
         {" "}
         <CategoryIcon className={"w-5 "} /> Category
@@ -21,7 +21,7 @@ export const MarketCard = () => {
         </p>
       </section>
       <footer className="flex gap-2">
-        <Link to={`/${'id'}`} className="font-robotoMono rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
+        <Link to={`/marketplace/${'id'}`} className="font-robotoMono rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
         <InfoIcon className={'w-5'} />
           View Listing
         </Link>

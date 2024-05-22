@@ -9,6 +9,7 @@ export default {
         thertiary: "#C68F01",
         dark: "#040009",
         light: "#FEFCFF",
+        
       },
       backgroundColor: {
         primary: "#8E37DB",
@@ -16,6 +17,7 @@ export default {
         thertiary: "#C68F01",
         dark: "#040009",
         light: "#FEFCFF",
+        
       },
       fontFamily: {
         rubik: '"Rubik", sans-serif',

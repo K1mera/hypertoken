@@ -5,3 +5,7 @@
 .filterButton {
     @apply flex gap-2 py-1 px-4 border border-light rounded-lg items-center;
 }
+
+.title-singleProduct {
+    @apply font-rubik text-secondary font-bold text-lg mb-2;
+}
