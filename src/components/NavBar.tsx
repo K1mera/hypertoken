@@ -2,30 +2,26 @@ import { WalletAdapterNetwork, WalletNotConnectedError } from '@solana/wallet-ad
 import { ConnectionProvider, WalletProvider, useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
-
 import {
     LedgerWalletAdapter,
     PhantomWalletAdapter,
     SolflareWalletAdapter,
     TorusWalletAdapter,
-
 } from '@solana/wallet-adapter-wallets';
-import fs from "fs";
 
-import { clusterApiUrl, Transaction, SystemProgram, Keypair, LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js';
+import { clusterApiUrl, Transaction, SystemProgram, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import React, { FC, ReactNode, useMemo, useCallback, useState } from 'react';
+
+import '@solana/wallet-adapter-react-ui/styles.css';
+import { NavLink } from 'react-router-dom';
+
 
 
 
 let thelamports = 0;
 let theWallet = "9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9"
-function getWallet(){
 
-    
-}
 const App: FC = () => {
-
-
     return (
         <NavBar>
             <Content />
@@ -33,30 +29,22 @@ const App: FC = () => {
     );
 };
 
-
 export default App;
 
 const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
-    // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
     const network = WalletAdapterNetwork.Devnet;
-
-    // You can also provide a custom RPC endpoint.
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-    // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking and lazy loading --
-    // Only the wallets you configure here will be compiled into your application, and only the dependencies
-    // of wallets that your users connect to will be loaded.
     const wallets = useMemo(
         () => [
             new LedgerWalletAdapter(),
             new PhantomWalletAdapter(),
-            new SolflareWalletAdapter({ network }),
+            new TorusWalletAdapter(),
+            new SolflareWalletAdapter({ network }),  
             new TorusWalletAdapter(),
         ],
         [network]
     );
-
-   
 
     return (
         <ConnectionProvider endpoint={endpoint}>
@@ -69,78 +57,80 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
 
 const Content: FC = () => {
     let [lamports, setLamports] = useState(.1);
-    let [wallet, setWallet] = useState("9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9");
-
-  
-    
+    const [wallet, setWallet] = useState("9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9");
 
     const { connection } = useConnection();
-    // const connection = new Connection(clusterApiUrl("devnet"))
     const { publicKey, sendTransaction } = useWallet();
 
-
- 
-
-    const onClick = useCallback( async () => {
-
+    const onClick = useCallback(async () => {
         if (!publicKey) throw new WalletNotConnectedError();
-        connection.getBalance(publicKey).then((bal) => {
-            console.log(bal/LAMPORTS_PER_SOL);
-
-        });
-
-        let lamportsI = LAMPORTS_PER_SOL*lamports;
+        
+        let lamportsI = LAMPORTS_PER_SOL * lamports;
         console.log(publicKey.toBase58());
-        console.log("lamports sending: {}", thelamports)
+        console.log(`lamports sending: ${lamportsI}`);
+        
         const transaction = new Transaction().add(
             SystemProgram.transfer({
                 fromPubkey: publicKey,
-                toPubkey: new PublicKey(theWallet),
+                toPubkey: new PublicKey(wallet),
                 lamports: lamportsI,
             })
         );
 
         const signature = await sendTransaction(transaction, connection);
-
         await connection.confirmTransaction(signature, 'processed');
-    }, [publicKey, sendTransaction, connection]);
+    }, [publicKey, sendTransaction, connection, lamports, wallet]);
 
-    
-function setTheLamports(e: any)
-{
-    console.log(Number(e.target.value));
-    setLamports(Number(e.target.value));
-    lamports = e.target.value;
-    thelamports = lamports;
-}
-function setTheWallet(e: any){
-    setWallet(e.target.value)
-    theWallet = e.target.value;
-}
+    function setTheLamports(e: any) {
+        console.log(Number(e.target.value));
+        const value = Number(e.target.value);
+        setLamports(value);
+        lamports = e.target.value;
+        thelamports = lamports;
+    };
+
+    function setTheWallet(e: any) {
+        setWallet(e.target.value)
+        theWallet = e.target.value;
+    };
+
     return (
-       
-
-        <div className="App">
-                <div className="navbar">
-        <div className="navbar-inner ">
-          <a id="title" className="brand" href="#">Brand</a>
-          <ul className="nav">
-
-
-          </ul>
-          <ul className="nav pull-right">
-                      <li><a href="#">White Paper</a></li>
-                      <li className="divider-vertical"></li>
-                      <li><WalletMultiButton /></li>
-
-                    </ul>
-        </div>
+      <nav className="h-16 flex justify-between bg-dark/30 items-center w-full gap-5 font-rubik font-bold fixed px-10 lg:px-20 2xl:px-40 top-0 backdrop-blur-md z-50">
+      <div className="flex items-center gap-5">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `hover:text-secondary ${
+              !isActive
+                ? "text-white"
+                : "text-primary  "
+            }`
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/marketplace"
+          className={({ isActive }) =>
+            `hover:text-secondary ${
+              !isActive
+                ? "text-white"
+                : "text-primary "
+            }`
+          }
+        >
+          Marketplace
+        </NavLink>
       </div>
-<input value={lamports} type="number" onChange={(e) => setTheLamports(e)}></input>
-        <br></br>
-      <button className='btn' onClick={onClick}>Send Sol </button>
 
-
-        </div>
+      <button className="bg-primary rounded-lg px-5 py-1">
+        <WalletMultiButton />
+      </button>
+            <input value={wallet} type="text" onChange={setTheWallet}></input>
+            <br></br>
+            <input value={lamports} type="number" onChange={setTheLamports}></input>
+            <br></br>
+            <button className='btn' onClick={onClick}>Send Sol</button>
+    </nav>
     );
 };
