@@ -24,19 +24,19 @@ export const HomePage = () => {
   return (
     <main className="w-full  h-full pb-10 md:h-[calc(100vh-64px)] flex flex-col  pt-20 gap-20 scroll-p-0 scroll-m-0">
       <section className="flex w-full md:flex-row flex-col">
-        <section className="flex flex-col items-center gap-3 lg:gap-0 w-full md:w-[47%]">
-          <h3 className="font-rubik font-bold text-md md:text-xl lg:text-2xl text-secondary">
+        <section className="flex flex-col items-center md:items-start gap-3 2xl:gap-0 w-full lg:w-[48%]">
+          <h3 className="font-rubik font-bold text-md lg:text-xl 2xl:text-2xl text-secondary">
             PRE-LAUNCH SALE ON NOW
           </h3>
           <div className="flex flex-col gap-0 ">
-            <h2 className="font-rubik font-bold text-[1.1rem] md:text-[2.2rem] lg:text-[2.95rem] lg:-mb-11 md:-mb-7 -mb-4">
+            <h2 className="font-rubik font-bold text-[1.1rem] lg:text-[1.93rem] 2xl:text-[2.95rem] 2xl:-mb-11 lg:-mb-7 -mb-4">
               BUY AND SELL STARTUPS WITH
             </h2>
-            <h1 className="font-rubik font-bold text-[2.46rem] md:text-[4.884rem] lg:text-[6.57rem] text-primary">
+            <h1 className="font-rubik font-bold text-[2.46rem] lg:text-[4.3rem] 2xl:text-[6.57rem] text-primary">
               $SAAS TOKEN
             </h1>
           </div>
-          <button className="border border-secondary rounded-lg px-10 font-rubik font-bold text-md md:text-lg w-[98%]">
+          <button className="border border-secondary rounded-lg px-10 font-rubik font-bold text-md md:text-lg w-full lg:w-[98%]">
             1 SOL: 1,000,000 SAAS TOKENS
           </button>
         </section>
@@ -53,7 +53,7 @@ export const HomePage = () => {
             className="flex items-center mb-2 md:w-1/2 md:pr-20 w-full "
           >
             <input
-              type="text"
+              type="number"
               placeholder="Enter Sol quantity"
               onChange={onInputChange}
               value={value}

@@ -4,8 +4,8 @@ import { FilterBar, MarketCard } from "../components";
 export const Marketplace = () => {
   return (
     <main className="flex flex-col py-10 h-full ">
-        <FilterBar />
-      <section className="flex md:flex-wrap flex-col pb-10 gap-8 justify-between px-10">
+      <FilterBar />
+      <section className="flex lg:flex-wrap lg:flex-row lg:w-full flex-col pb-10 gap-5 justify-between lg:px-0 px-10">
         <MarketCard />
         <MarketCard />
         <MarketCard />

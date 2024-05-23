@@ -3,7 +3,7 @@ import { InfoIcon, CategoryIcon, LockIcon } from "../svg";
 
 export const MarketCard = () => {
   return (
-    <main className="md:w-[31%] w-full  h-[ px] rounded-xl border border-primary flex flex-col p-5 shadow-card gap-5">
+    <main className="md:w-[32%] w-full  rounded-xl border border-primary flex flex-col p-5 shadow-card gap-5">
       <header className="font-semibold flex gap-2">
         {" "}
         <CategoryIcon className={"w-5 "} /> Category
@@ -21,12 +21,12 @@ export const MarketCard = () => {
         </p>
       </section>
       <footer className="flex gap-2">
-        <Link to={`/marketplace/${'id'}`} className="font-robotoMono rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
-        <InfoIcon className={'w-5'} />
+        <Link to={`/marketplace/${'id'}`} className="font-robotoMono font-semibold text-xs rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
+        <InfoIcon className={'w-10'} />
           View Listing
         </Link>
-        <Link className="font-robotoMono bg-primary rounded-lg px-5 py-3 flex justify-center items-center gap-2 truncate">
-            <LockIcon className={'w-5'} />
+        <Link className="font-robotoMono font-semibold text-xs bg-primary rounded-lg px-5 py-3 flex justify-center items-center gap-2 truncate">
+            <LockIcon className={'w-10'} />
           Unlock List
         </Link>
       </footer>
