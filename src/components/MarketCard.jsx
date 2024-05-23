@@ -21,12 +21,12 @@ export const MarketCard = () => {
         </p>
       </section>
       <footer className="flex gap-2">
-        <Link to={`/marketplace/${'id'}`} className="font-robotoMono font-semibold text-xs rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
+        <Link to={`/marketplace/${'id'}`} className=" w-full font-robotoMono font-semibold text-md rounded-lg px-5 py-3 border border-secondary flex justify-center items-center gap-2 truncate">
         <InfoIcon className={'w-10'} />
           View Listing
         </Link>
-        <Link className="font-robotoMono font-semibold text-xs bg-primary rounded-lg px-5 py-3 flex justify-center items-center gap-2 truncate">
-            <LockIcon className={'w-10'} />
+        <Link className=" w-full font-robotoMono font-semibold text-md bg-primary rounded-lg px-5 py-3 flex justify-center items-center gap-2 truncate">
+            <LockIcon className={'w-5'} />
           Unlock List
         </Link>
       </footer>

@@ -4,7 +4,7 @@ import {LockIcon} from "../../svg";
 
 export const CompanyCard = () => {
   return (
-    <main className=" h-full rounded-xl border border-primary flex flex-col p-5 shadow-card gap-2">
+    <main className="h-full w-full rounded-xl border border-primary flex flex-col p-5 shadow-card gap-2">
       <header className="font-semibold flex gap-2"> Company</header>
       <section className="h-full flex flex-col w-full">
         <h3 className="font-robotoMono font-regular ">

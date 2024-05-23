@@ -73,7 +73,7 @@ export const Opening = () => {
           </div>
         </footer>
       </div>
-      <div className="w-[32%]">
+      <div className="lg:w-[32%]">
         <CompanyCard />
       </div>
     </section>
