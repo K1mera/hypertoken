@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { NavBar } from "../components";
 import { HomePage, Marketplace, SingleProduct } from "../pages";
+import App from "../components/NavBar";
 
 export const MainRouter = () => {
   return (
     <>
-      <NavBar />
+      <App />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/marketplace" element={<Marketplace />}></Route>
