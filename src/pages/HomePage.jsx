@@ -1,9 +1,8 @@
-import { useCallback, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "../hooks";
 import hypertoken from "/assets/hypertoken.png";
-import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
-import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
+import { useWalletContext } from "../components/WalletContext";
+import { Transaction } from "@solana/web3.js";
 
 export const HomePage = () => {
   const { value, formState, onInputChange, onResetForm } = useForm({
@@ -15,42 +14,18 @@ export const HomePage = () => {
     return saas;
   };
 
-  let [lamports, setLamports] = useState(.1);
-  let [wallet, setWallet] = useState("9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9"); 
-  
-  const { connection } =  useConnection();
-  const { publicKey, sendTransaction } = useWallet();
+//   useEffect(() => {
+//     calcSol(value);
+//   }, [value]);
 
-  const onClick = useCallback(async () => {
-    if(!publicKey) throw new WalletNotConnectedError();
-
-    let lamportsI = LAMPORTS_PER_SOL * lamports;
-    console.log(publicKey.toBase58());
-    console.log(`lamports sending: ${lamportsI}`);
-
-    const transaction = new Transaction().add(
-      SystemProgram.transfer({
-        fromPubkey: publicKey,
-        toPubkey: new PublicKey(wallet),
-        lamports: lamportsI,
-      })
-    );
-
-    const signature = await sendTransaction(transaction, connection);
-    await connection.confirmTransaction(signature, 'processed');
-  }, [publicKey, connection, lamports, wallet, sendTransaction]);
-
-  const handleLamportsChange = (e) => {
-    const value = Number(e.target.value);
-    setLamports(value);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    
   };
 
-  const handleWalletChange = (e) => {
-    setWallet(e.target.value);
-  }
 
   return (
-    <main className="w-full h-full pb-10 md:h-[calc(100vh-64px)] flex flex-col pt-20 gap-20 scroll-p-0 scroll-m-0">
+    <main className="w-full  h-full pb-10 md:h-[calc(100vh-64px)] flex flex-col  pt-20 gap-20 scroll-p-0 scroll-m-0">
       <section className="flex w-full md:flex-row flex-col">
         <section className="flex flex-col items-center md:items-start gap-3 2xl:gap-0 w-full lg:w-[48%]">
           <h3 className="font-rubik font-bold text-md lg:text-xl 2xl:text-2xl text-secondary">
@@ -77,26 +52,19 @@ export const HomePage = () => {
         <div className="flex flex-col md:flex-row ">
           <form
             action=""
+            onSubmit={onSubmit}
             className="flex items-center mb-2 md:w-1/2 md:pr-20 w-full "
           >
-          <input
-              type="text"
-              placeholder="Enter Wallet Address"
-              onChange={handleWalletChange}
-              value={wallet}
-              name="wallet"
-              className="bg-white/10 w-full h-10 rounded-l-lg font-robotoMono font-medium pl-5"
-          />
-          <input
+            <input
               type="number"
               placeholder="Enter Sol quantity"
-              onChange={handleLamportsChange}
-              value={lamports}
+              onChange={onInputChange}
+              value={value}
               name="value"
               className="bg-white/10 w-full h-10 rounded-l-lg font-robotoMono font-medium pl-5"
-           />
-            <button type="button" className="bg-primary w-16 h-10 rounded-r-lg font-rubik font-bold" onClick={onClick}>
-                Buy
+            />
+            <button className="bg-primary w-16 h-10 rounded-r-lg font-rubik font-bold">
+              buy
             </button>
           </form>
           <div className="w-1/2 border-l-2 border-thertiary pl-5 md:flex hidden">

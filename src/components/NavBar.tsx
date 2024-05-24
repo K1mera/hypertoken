@@ -11,21 +11,21 @@ import {
 
 import { clusterApiUrl, Transaction, SystemProgram, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import React, { FC, ReactNode, useMemo, useCallback, useState } from 'react';
+import { WalletProviderContext as CustomWalletProvider, useWalletContext } from './WalletContext'; 
 
 import '@solana/wallet-adapter-react-ui/styles.css';
 import { NavLink } from 'react-router-dom';
 
-
-
-
 let thelamports = 0;
-let theWallet = "9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9"
+let theWallet = "8dGbgNTz67yqQMwuxGMxMhMRBcGrkFJHs2GnxZwN79xD"
 
 const App: FC = () => {
     return (
+      <CustomWalletProvider>
         <NavBar>
             <Content />
         </NavBar>
+      </CustomWalletProvider> 
     );
 };
 
@@ -48,7 +48,7 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
 
     return (
         <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={wallets} autoConnect>
+            <WalletProvider wallets={wallets} autoConnect> 
                 <WalletModalProvider>{children}</WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
@@ -57,16 +57,17 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
 
 const Content: FC = () => {
     let [lamports, setLamports] = useState(.1);
-    const [wallet, setWallet] = useState("9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9");
+    const [wallet, setWallet] = useState("8dGbgNTz67yqQMwuxGMxMhMRBcGrkFJHs2GnxZwN79xD");
 
     const { connection } = useConnection();
+    const { setPublicKey } = useWalletContext();
     const { publicKey, sendTransaction } = useWallet();
 
     const onClick = useCallback(async () => {
         if (!publicKey) throw new WalletNotConnectedError();
         
         let lamportsI = LAMPORTS_PER_SOL * lamports;
-        console.log(publicKey.toBase58());
+        console.log("valor:", publicKey.toBase58());
         console.log(`lamports sending: ${lamportsI}`);
         
         const transaction = new Transaction().add(
@@ -93,6 +94,12 @@ const Content: FC = () => {
         setWallet(e.target.value)
         theWallet = e.target.value;
     };
+
+    React.useEffect(() => {
+      if(publicKey) {
+        setPublicKey(publicKey.toBase58());
+      }
+    }, [publicKey, setPublicKey])
 
     return (
       <nav className="h-16 flex justify-between bg-dark/30 items-center w-full gap-5 font-rubik font-bold fixed px-10 lg:px-20 2xl:px-40 top-0 backdrop-blur-md z-50">
@@ -126,11 +133,35 @@ const Content: FC = () => {
       <button className="bg-primary rounded-lg px-5 py-1">
         <WalletMultiButton />
       </button>
-            <input value={wallet} type="text" onChange={setTheWallet}></input>
+            {/* <input value={wallet} type="text" onChange={setTheWallet}></input>
             <br></br>
             <input value={lamports} type="number" onChange={setTheLamports}></input>
             <br></br>
-            <button className='btn' onClick={onClick}>Send Sol</button>
+            <button className='btn' onClick={onClick}>Buy</button> */}
+          <form
+            action=""
+            className="flex items-center mb-2 md:w-1/2 md:pr-20 w-full "
+          >
+          <input
+              type="text"
+              placeholder="Enter Wallet Address"
+              onChange={setTheWallet}
+              value={wallet}
+              name="wallet"
+              className="bg-white/10 w-full h-10 rounded-l-lg font-robotoMono font-medium pl-5"
+          />
+          <input
+              type="number"
+              placeholder="Enter Sol quantity"
+              onChange={setTheLamports}
+              value={lamports}
+              name="value"
+              className="bg-white/10 w-full h-10 rounded-l-lg font-robotoMono font-medium pl-5"
+           />
+            <button type="button" className="bg-primary w-16 h-10 rounded-r-lg font-rubik font-bold" onClick={onClick}>
+                Buy
+            </button>
+          </form>
     </nav>
     );
 };
