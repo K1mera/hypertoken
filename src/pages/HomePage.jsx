@@ -70,7 +70,7 @@ export const HomePage = () => {
               early-stage startup investing through blockchain technology. Join
               us in our mission to democratize access to investment
               opportunities while securing your spot in our token presale for
-              exclusive benefits
+              exclusive benefits.
             </p>
           </div>
         </div>
