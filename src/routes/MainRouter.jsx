@@ -1,20 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import { HomePage, Marketplace, SingleProduct } from "../pages";
-import App from "../components/NavBar";
-import { WalletProvider } from "@solana/wallet-adapter-react";
-import { WalletProviderContext as CustomWalletProvider, useWalletContext } from '../components/WalletContext'; 
+import App from "../components/NavBar"; // Asegúrate de que la ruta sea correcta
+import { WalletProviderContext as CustomWalletProvider } from '../components/WalletContext'; 
+import NavBar from "../components/NavBar";
 
 export const MainRouter = () => {
   return (
     <CustomWalletProvider> 
-    <>
-      <App />  
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/marketplace" element={<Marketplace />}></Route>
-        <Route path="/marketplace/:id" element={<SingleProduct />}></Route>
-      </Routes>
-    </>
-  </CustomWalletProvider>
+      <NavBar>  
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/marketplace" element={<Marketplace />}></Route>
+          <Route path="/marketplace/:id" element={<SingleProduct />}></Route>
+        </Routes>
+      </NavBar>
+    </CustomWalletProvider>
   );
 };
