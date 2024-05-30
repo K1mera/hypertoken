@@ -101,6 +101,15 @@ const Content: FC = () => {
       }
     }, [publicKey, setPublicKey])
 
+    const goToPhantomWallet=()=>{
+      if ('phantom' in window) {
+        const provider = window.phantom?.solana;
+        if (provider?.isPhantom) {
+          return provider;
+        }
+      }
+      window.open('https://phantom.app/', '_blank');
+    }
     return (
       <nav className="h-16 flex justify-between bg-dark/30 items-center w-full gap-5 font-rubik font-bold fixed px-10 lg:px-20 2xl:px-40 top-0 backdrop-blur-md z-50">
       <div className="flex items-center gap-5">
@@ -130,7 +139,7 @@ const Content: FC = () => {
         </NavLink>
       </div>
 
-      <button className="bg-primary rounded-lg px-5 py-1">
+      <button onClick={goToPhantomWallet} className="bg-black rounded-lg px-5 py-1">
         <WalletMultiButton />
       </button>
             {/* <input value={wallet} type="text" onChange={setTheWallet}></input>
@@ -138,7 +147,7 @@ const Content: FC = () => {
             <input value={lamports} type="number" onChange={setTheLamports}></input>
             <br></br>
             <button className='btn' onClick={onClick}>Buy</button> */}
-          <form
+          {/* <form
             action=""
             className="flex items-center mb-2 md:w-1/2 md:pr-20 w-full "
           >
@@ -161,7 +170,7 @@ const Content: FC = () => {
             <button type="button" className="bg-primary w-16 h-10 rounded-r-lg font-rubik font-bold" onClick={onClick}>
                 Buy
             </button>
-          </form>
+          </form> */}
     </nav>
     );
 };
