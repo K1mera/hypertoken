@@ -4,7 +4,8 @@ function Tokenomics(params) {
   return (
     <div className={style.container}>
       <h1>Tokenomics</h1>
-      <h2>Build Token will be launched with a fair launch - no pre sales.</h2>
+      <h2 className={style.inBigScreenText} >Build Token will be launched with a fair launch - no pre sales.</h2>
+      <h2 className={style.inSmallScreenText} >Build Token.</h2>
       <div className={style.containerData}>
         <div className={style.labelData}>
           <div>Total Suppy:</div>
