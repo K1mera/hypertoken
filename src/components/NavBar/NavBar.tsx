@@ -1,7 +1,7 @@
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-
+import style from './NavBar.module.scss';
 import {
     LedgerWalletAdapter,
     PhantomWalletAdapter,
@@ -28,12 +28,15 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
         ],
         [network]
     );
+    const navigateto= ()=>{
+        window.open('https://buildvision-ai.gitbook.io/buildvision-ai-white-paper','_blank')
+    }
 
     return (
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
-                    <nav className="h-16 flex justify-between bg-dark/30 items-center w-full gap-5 font-rubik font-bold fixed px-10 lg:px-20 2xl:px-40 top-0 backdrop-blur-md z-50">
+                    <nav className= {`h-16 flex justify-between bg-dark/30 items-center w-full gap-5 font-rubik font-bold fixed px-10 lg:px-20 2xl:px-40 top-0 backdrop-blur-md z-50 ${style.container} `}>
                         <div className="flex items-center gap-5">
                             {/* <NavLink
                                 to="/"
@@ -57,9 +60,12 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
                             </NavLink> */}
                             <img src="/HeaderLogo.png" alt="" />
                         </div>
+                        <div className={style.containButtons} >
+                        <span onClick={navigateto} style={{color:'white',cursor:'pointer' }} >White Paper</span>
                         <button className="bg-inherit rounded-lg px-5 py-1">
                             <WalletMultiButton />
                         </button>
+                        </div>
                     </nav>
                     {children}
                 </WalletModalProvider>

@@ -43,6 +43,9 @@
     box-shadow: 8px 12px 0px 0px var(--Hover, #0047FF);
     margin-bottom: 8%;
 }
+.cards img{
+    padding: 20px;
+}
 
 .titleCard{
     font-size: 20px;
@@ -104,6 +107,9 @@
         border: 1px solid var(--Terciario, #0230A5);
         background: var(--dark, #040009);
         box-shadow: 8px 12px 0px 0px var(--Hover, #0047FF);
+    }
+    .cards img{
+        padding: 30px;
     }
     
     .titleCard{

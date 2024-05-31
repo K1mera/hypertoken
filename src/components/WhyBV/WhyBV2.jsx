@@ -5,7 +5,7 @@ const WhyBV2 = () => {
   return (
     <div className={style.allContainer}>
       <div className={style.rowTitle}>
-        <h1>WHY BUILDVISIONAI</h1>
+        <h1>WHY BUILDVISION<span>AI</span></h1>
         <p>
           Unlike 99% of crypto projects today, we not only have a utility, we have a
           BUILT MVP with existing construction clients who love our solution.
