@@ -9,3 +9,7 @@
 .title-singleProduct {
     @apply font-rubik text-secondary font-bold text-lg mb-2;
 }
+
+body{
+    background-color: #000000;
+}

@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { HomePage, Marketplace, SingleProduct } from "../pages";
-import App from "../components/NavBar"; // Asegúrate de que la ruta sea correcta
+import App from "../components/NavBar/NavBar"; // Asegúrate de que la ruta sea correcta
 import { WalletProviderContext as CustomWalletProvider } from '../components/WalletContext'; 
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/NavBar";
 
 export const MainRouter = () => {
   return (

@@ -1,0 +1,28 @@
+.allContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150%;
+    color: white;
+}
+.bigTitle{
+    color: #0F52FF;
+    font-size: 48px;
+    text-align: center;
+    font-weight: 900;
+}
+.bigTitle span{
+    color: white;
+}
+.containCards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.cards{
+    border: 1px solid #0F52FF ;
+    width: 20%;
+}

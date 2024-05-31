@@ -35,7 +35,7 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
                 <WalletModalProvider>
                     <nav className="h-16 flex justify-between bg-dark/30 items-center w-full gap-5 font-rubik font-bold fixed px-10 lg:px-20 2xl:px-40 top-0 backdrop-blur-md z-50">
                         <div className="flex items-center gap-5">
-                            <NavLink
+                            {/* <NavLink
                                 to="/"
                                 className={({ isActive }) =>
                                     `hover:text-secondary ${
@@ -54,9 +54,10 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
                                 }
                             >
                                 Marketplace
-                            </NavLink>
+                            </NavLink> */}
+                            <img src="/HeaderLogo.png" alt="" />
                         </div>
-                        <button className="bg-primary rounded-lg px-5 py-1">
+                        <button className="bg-inherit rounded-lg px-5 py-1">
                             <WalletMultiButton />
                         </button>
                     </nav>
