@@ -4,6 +4,7 @@ import CalculateTimeLeft from "../components/CalculateTimeLeft/CalculateTimeLeft
 import Tokenomics from "../components/Tokenomics/Tokenomics";
 import Roadmap from "../components/Roadmap/Roadmap";
 import WhyBV from "../components/WhyBV/WhyBV";
+import WhyBV2 from "../components/WhyBV/WhyBV2";
 
 export const HomePage = () => {
   const navigateBv = (link) => {
@@ -43,6 +44,7 @@ export const HomePage = () => {
         <Tokenomics />
         <Roadmap/>
         <WhyBV/>
+        <WhyBV2/>
       </section>
     </div>
   );

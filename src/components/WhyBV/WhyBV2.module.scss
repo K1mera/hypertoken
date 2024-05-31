@@ -1,0 +1,126 @@
+.allContainer {
+  width: 150%;
+  height: auto;
+  margin-top: 6vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: #0f52ff;
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+  }
+  p {
+    color: white;
+    font-size: 20px;
+    width: 55%;
+    text-align: center;
+  }
+}
+
+.rowContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.leftColum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  img {
+    width: 90%;
+    margin: 10px;
+  }
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textTop {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  .lineBlue {
+    width: 10px;
+    background-color: #0f52ff;
+    margin-right: 10px;
+  }
+
+  .rightColumContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: start;
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.porcent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .porcentColumn {
+    width: 100%;
+    padding: 20px;
+    p {
+      width: 80%;
+      font-size: 14px;
+    }
+  }
+}
+
+.textBottom {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  .lineBlue {
+    width: 10px;
+    background-color: #0f52ff;
+    margin-right: 10px;
+  }
+  .bottonContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: start;
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  }
+}
