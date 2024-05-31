@@ -1,0 +1,127 @@
+.containInLinemap{
+    background-color: transparent;
+    border: 0px solid #0047FF;
+    width: 90%;
+    padding: 1.2em;
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+.allContainer{
+    width: 150%;
+    color: white;
+}
+.bigTitle{
+    color: white;
+    font-size: 32px;
+    
+}
+.containColumns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.linerH{
+    display: none;
+}
+.title{
+    font-size: 16px;
+    font-weight: 500;
+    width: 70%;
+}
+.date{
+    font-size: 12px;
+}
+.content{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.containerLeft{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerRigth{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width:40em) {
+    .containInLinemap{
+        background-color: transparent;
+        border: 1px solid #0047FF;
+        width: 90%;
+        padding: 1.2em;
+        border-radius: 10px;
+        margin-bottom: 10%;
+    }
+    .allContainer{
+        width: 150%;
+        color: white;
+    }
+    .bigTitle{
+        color: white;
+        font-size: 48px;
+        
+    }
+    .containColumns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    .linerH{
+        display: block;
+        width: 7px; 
+        height: 70vh; 
+        background-color: #ffffff; 
+        margin: 0 10px;
+    }
+    .title{
+        font-size: 24px;
+        font-weight: 500;
+        width: 70%;
+    }
+    .date{
+        font-size: 16px;
+    }
+    .content{
+        font-size: 16px;
+        font-weight: 300;
+    }
+    
+    .containerLeft{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .containerRigth{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .containHeader{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}

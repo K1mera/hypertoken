@@ -1,0 +1,129 @@
+.allContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150%;
+    color: white;
+}
+.bigTitle{
+    color: #0F52FF;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 900;
+}
+.bigTitle span{
+    color: white;
+}
+.smallSpan{
+    font-size: 12px;
+    text-align: center;
+}
+.containCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.cards{
+    border: 1px solid #0F52FF ;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    height: 73vh;
+    margin:  0 5%;
+    border-radius: 12px;
+    border: 1px solid var(--Terciario, #0230A5);
+    background: var(--dark, #040009);
+    box-shadow: 8px 12px 0px 0px var(--Hover, #0047FF);
+    margin-bottom: 8%;
+}
+.cards img{
+    padding: 20px;
+}
+
+.titleCard{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.bodyText{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.lastEle{
+    height: 5vh;
+}
+
+
+@media screen and (min-width:40em){
+    .allContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 150%;
+        color: white;
+    }
+    .bigTitle{
+        color: #0F52FF;
+        font-size: 48px;
+        text-align: center;
+        font-weight: 900;
+    }
+    .bigTitle span{
+        color: white;
+    }
+    .smallSpan{
+        font-size: 20px;
+        text-align: center;
+    }
+    .containCards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    
+    .cards{
+        border: 1px solid #0F52FF ;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        height: 73vh;
+        margin:  0 5%;
+        border-radius: 12px;
+        border: 1px solid var(--Terciario, #0230A5);
+        background: var(--dark, #040009);
+        box-shadow: 8px 12px 0px 0px var(--Hover, #0047FF);
+    }
+    .cards img{
+        padding: 30px;
+    }
+    
+    .titleCard{
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .bodyText{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .lastEle{
+        height: 5vh;
+    }
+}
