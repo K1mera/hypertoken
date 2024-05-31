@@ -101,10 +101,11 @@
 .textBottom {
   display: flex;
   flex-direction: row;
+  margin-right: 10px;
   margin-bottom: 10px;
 
   .lineBlue {
-    width: 10px;
+    width: 13px;
     background-color: #0f52ff;
     margin-right: 10px;
   }
