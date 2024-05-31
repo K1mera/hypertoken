@@ -1,0 +1,128 @@
+.allContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.infoHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 60%;
+    height: 70%;
+}
+
+.containFirstTexts{
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+.firtText{
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    font-style: normal;
+}
+.secondText{
+    background: linear-gradient(180deg, #0035BD 42%, #000005 88.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    text-align: center;
+}
+
+.image{
+    position: absolute;
+    top:45%;
+    z-index: 2;
+}
+
+.follow{
+    position: absolute;
+    left: 5%;
+    top: 35%;
+}
+
+.follow ul li{
+    cursor: pointer;
+    margin:10% 0;
+    transition: transform 0.3s ease;
+}
+
+.follow ul li:hover{
+    transform: scale(1.1);
+}
+
+.bigContainDate{
+    z-index: 3;
+    position: relative;
+    top:35%;
+    background-color: #222222;
+    width: 35%;
+    border-radius: 10px;
+    height: 12em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ffffff;
+}
+
+.time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #605E5E;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+.codePath{
+    font-size: 11px;
+    height: 20%;
+    margin-top: 10px;
+    background-color: #605E5E;
+    border: 1px solid #ffffff;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+.containNumbers{
+    display: flex;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+}
+
+.letterCount{
+    font-size: 16px;
+}
+
+.contletterNumber{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 3%;
+}
+
+.finalDate{
+    background-color: #0035BD;
+    font-size: 12px;
+    margin-bottom: 5%;
+    border: 1px solid white;
+    padding: 0 5%;
+    border-radius: 5px;
+}
