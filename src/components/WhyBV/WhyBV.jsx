@@ -4,7 +4,7 @@ function WhyBV() {
   return (
     <div className={style.allContainer} >
       <h2 className={style.bigTitle} >WHY BUILDVISION<span>PAY</span></h2>
-      <span>
+      <span className={style.smallSpan} >
         Our revolutionary payment and smart contract system for construction
         companies.
       </span>
@@ -39,6 +39,7 @@ function WhyBV() {
           </span>
         </div>
       </div>
+      <div className={style.lastEle} ></div>
     </div>
   );
 }

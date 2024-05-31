@@ -1,18 +1,20 @@
 .container{
-    margin-top: 30%;
+    margin-top: 90%;
     width: 150%;
     height: 500px;
     color :white;
 }
 
 .container h1{
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 500;
 }
 
-.container h2{
-    font-size: 24px;
-    font-weight: 500;
+.inBigScreenText{
+    display: none;
+}
+.inSmallScreenText{
+    font-size: 16px;
 }
 
 .containerData{
@@ -36,6 +38,7 @@
     align-items: center;
     width: 100%;
     font-weight: 400;
+    font-size: 14px;
 }
 
 .data{
@@ -44,4 +47,57 @@
     justify-content: space-between;
     flex-direction: row;
     font-weight: 700;
+}
+
+@media screen and (min-width:40em) {
+    .container{
+        margin-top: 30%;
+        width: 150%;
+        height: 500px;
+        color :white;
+    }
+    
+    .container h1{
+        font-size: 48px;
+        font-weight: 500;
+    }
+    .inSmallScreenText{
+        display: none;
+    }
+    .inBigScreenText{
+        font-size: 24px;
+        font-weight: 500;
+    }
+    
+    .containerData{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .liner{
+        height: 2px;
+        background-color: #ccc; 
+        border: none; 
+        width: 100%;
+        margin: 15px 0; 
+    }
+    
+    .labelData{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    
+    .data{
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        flex-direction: row;
+        font-weight: 700;
+    }
 }
