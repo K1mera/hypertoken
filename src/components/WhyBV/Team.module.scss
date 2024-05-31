@@ -9,6 +9,88 @@
   padding-left: 50px;
 
   h2 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 11px;
+    
+  }
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .bosses {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 10px;
+    margin-bottom: 20px;
+    img {
+      width: 80%;
+      margin: 10px;
+    }
+    div {
+      width: 100%;
+      p {
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+  }
+  .developers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .pictureTop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+    .pictureBotton {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.dev {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  p {
+    font-size: 10px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .container {
+  width: 150%;
+  height: auto;
+  margin-top: 6vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+
+  h2 {
     font-size: 48px;
   }
   p {
@@ -76,4 +158,5 @@
     width: 80%;
     margin-left: 10px;
   }
+}
 }
