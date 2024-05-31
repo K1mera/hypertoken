@@ -5,6 +5,7 @@ import Tokenomics from "../components/Tokenomics/Tokenomics";
 import Roadmap from "../components/Roadmap/Roadmap";
 import WhyBV from "../components/WhyBV/WhyBV";
 import WhyBV2 from "../components/WhyBV/WhyBV2";
+import Footer from "../components/Footer/Footer";
 
 export const HomePage = () => {
   const navigateBv = (link) => {
@@ -45,6 +46,7 @@ export const HomePage = () => {
         <Roadmap/>
         <WhyBV/>
         <WhyBV2/>
+        <Footer/>
       </section>
     </div>
   );
