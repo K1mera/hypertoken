@@ -11,7 +11,7 @@ export const CompanyOverview = () => {
           Founded: <span className="font-robotoMono font-medium">Feb 2021</span>
         </h2>
       </header>
-      <section className="flex flex-col ">
+      <section className="flex flex-col w-full">
         <h3 className="title-singleProduct">Description</h3>
         <p className="font-robotoMono font-light">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -23,8 +23,8 @@ export const CompanyOverview = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </section>
-      <section className="flex w-full">
-        <div className="w-1/2 flex flex-col">
+      <section className="flex flex-col lg:flex-row w-full">
+        <div className="lg:w-1/2 flex flex-col mb-5 lg:mb-0 ">
           <h2 className="title-singleProduct">Key Functions Include</h2>
           <ul className="font-robotoMono font-light text-light ">
             <li className="list-inside list-disc">
@@ -55,7 +55,7 @@ export const CompanyOverview = () => {
           </ul>
         </div>
 
-        <div className="w-1/2 flex flex-col gap-5">
+        <div className="lg:w-1/2 flex flex-col gap-5">
           <ul className="flex justify-between">
             <li className="border-l-2 border-light border-dashed pl-5">
               <h2 className="title-singleProduct">Team size</h2>
