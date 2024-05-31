@@ -37,7 +37,7 @@ export const HomePage = () => {
           </ul>
         </section>
         <section className={style.image}>
-          <img src="/tokenWithCloud.png" className="w-69" alt="" />
+          <img src="/tokenWithCloud.png" className={style.imagePng} alt="" />
         </section>
         <CalculateTimeLeft />
         <Tokenomics />
