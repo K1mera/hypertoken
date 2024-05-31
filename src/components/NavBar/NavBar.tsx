@@ -62,8 +62,10 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
                         </div>
                         <div className={style.containButtons} >
                         <span onClick={navigateto} style={{color:'white',cursor:'pointer' }} >White Paper</span>
-                        <button className="bg-inherit rounded-lg px-5 py-1">
-                            <WalletMultiButton />
+                        <button className={style.walletButton}>
+                            <WalletMultiButton
+                                className={style.walletButton}
+                            />
                         </button>
                         </div>
                     </nav>

@@ -10,6 +10,12 @@
     }
 }
 
+.walletButton{
+    width: 90%;
+    // display: none;
+}
+
+
 @media screen and (min-width:40em){
     .containButtons{
         display: flex;
@@ -19,6 +25,12 @@
         width: 30%;
         span{
             font-size: 16px;
+            
         }
+    }
+
+    .walletButton{
+        font-size: 20px;
+        display: block;
     }
 }
