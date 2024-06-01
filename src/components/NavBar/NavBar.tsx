@@ -62,7 +62,7 @@ const NavBar: FC<{ children: ReactNode }> = ({ children }) => {
                             <img src="/HeaderLogo.png" alt="" />
                         </div>
                         <div className={style.containButtons} >
-                        <span onClick={navigateto} style={{color:'white',cursor:'pointer' }} >White Paper</span>
+                        <span onClick={navigateto} style={{color:'white',cursor:'pointer' }} >White Paper </span>
                         {/* <button className={style.walletButton}>
                             <WalletMultiButton
                                 className={style.walletButton}
